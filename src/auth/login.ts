@@ -10,11 +10,11 @@ window.Webflow.push(async () => {
 
 const handleLogin = () => {
   const form = document.querySelector<HTMLFormElement>('[data-element="form"]');
-  const emailInput = document.querySelector<HTMLInputElement>('[data-element="email-input"]');
+  const phoneInput = document.querySelector<HTMLInputElement>('[data-element="phone-input"]');
   const passwordInput = document.querySelector<HTMLInputElement>('[data-element="password-input"]');
   const submitButton = document.querySelector<HTMLButtonElement>('[data-element="submit-button"]');
 
-  if (!form || !emailInput || !passwordInput || !submitButton) {
+  if (!form || !phoneInput || !passwordInput || !submitButton) {
     return;
   }
 
@@ -24,10 +24,10 @@ const handleLogin = () => {
 
     submitButton.disabled = true;
 
-    const email = emailInput.value;
+    const phone = phoneInput.value;
     const password = passwordInput.value;
 
-    const response = await login(email, password);
+    const response = await login(phone, password);
     console.log(response);
 
     if (response.message) {
