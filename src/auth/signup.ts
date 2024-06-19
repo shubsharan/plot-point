@@ -35,7 +35,7 @@ const handleSignup = () => {
       handleFormError(response.message);
     } else {
       Cookies.set('authToken', response.authToken, { secure: true, sameSite: 'strict' });
-      window.location.pathname = '/stories';
+      window.location.pathname = '/';
     }
 
     submitButton.disabled = false;

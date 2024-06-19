@@ -34,7 +34,15 @@ const handleLogin = () => {
       handleFormError(response.message);
     } else {
       Cookies.set('authToken', response.authToken, { secure: true, sameSite: 'strict' });
-      window.location.pathname = '/profile';
+
+      // check for redirect query param
+      const urlParams = new URLSearchParams(window.location.search);
+      const redirect = urlParams.get('redirect');
+      if (redirect) {
+        window.location.pathname = redirect;
+        return;
+      }
+      window.location.pathname = '/';
     }
 
     submitButton.disabled = false;
