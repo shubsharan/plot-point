@@ -10,7 +10,7 @@ const authUrl = 'https://xcpv-kw4b-l7gt.n7c.xano.io/api:y0nt9N9U';
  */
 export const signUp = async (name: string, phone: string, password: string) => {
   try {
-    const response = await fetch(`${authUrl}/auth/signup`, {
+    const response = await fetch(`https://xcpv-kw4b-l7gt.n7c.xano.io/api:y0nt9N9U/auth/signup`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
