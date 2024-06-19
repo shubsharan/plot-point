@@ -66,3 +66,29 @@ export const getCompassBearing = (alpha: number, beta: number, gamma: number) =>
   let compass = -(alpha + beta * gamma / 90);
   compass -= Math.floor(compass / 360) * 360;
 }
+
+export const encodeMorse = (text: string) => {
+  if (!text) return;
+
+  const alphabet: {[key: string]: string} = {
+    'a': '.-',    'b': '-...',  'c': '-.-.', 'd': '-..',
+    'e': '.',     'f': '..-.',  'g': '--.',  'h': '....',
+    'i': '..',    'j': '.---',  'k': '-.-',  'l': '.-..',
+    'm': '--',    'n': '-.',    'o': '---',  'p': '.--.',
+    'q': '--.-',  'r': '.-.',   's': '...',  't': '-',
+    'u': '..-',   'v': '...-',  'w': '.--',  'x': '-..-',
+    'y': '-.--',  'z': '--..',  ' ': '/',
+    '1': '.----', '2': '..---', '3': '...--', '4': '....-', 
+    '5': '.....', '6': '-....', '7': '--...', '8': '---..', 
+    '9': '----.', '0': '-----', 
+  }
+
+  return text
+    .split('')            // Transform the string into an array: ['T', 'h', 'i', 's'...
+    .map(function(e){     // Replace each character with a morse "letter"
+        return alphabet[e.toLowerCase()] || ''; // Lowercase only, ignore unknown characters.
+    })
+    .join(' ')            // Convert the array back to a string.
+    .replace(/ +/g, ' '); // Replace double spaces that may occur when unknow characters were in the source string.
+
+}

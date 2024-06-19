@@ -8,7 +8,7 @@ const authUrl = 'https://xcpv-kw4b-l7gt.n7c.xano.io/api:y0nt9N9U';
  * @param input - The user's name, email, and password
  * @returns authToken
  */
-export const signUp = async (name: string, email: string, password: string) => {
+export const signUp = async (name: string, phone: string, password: string) => {
   try {
     const response = await fetch(`${authUrl}/auth/signup`, {
       method: 'POST',
@@ -17,7 +17,7 @@ export const signUp = async (name: string, email: string, password: string) => {
       },
       body: JSON.stringify({
         name: name,
-        email: email,
+        phone: phone,
         password: password,
       }),
     });
@@ -57,7 +57,7 @@ export const getUser = async (authToken: string) => {
  * @param password
  * @returns authToken
  */
-export const login = async (email: string, password: string) => {
+export const login = async (phone: string, password: string) => {
   try {
     const response = await fetch(`${authUrl}/auth/login`, {
       method: 'POST',
@@ -65,7 +65,7 @@ export const login = async (email: string, password: string) => {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        email: email,
+        phone: phone,
         password: password,
       }),
     });
