@@ -43,7 +43,7 @@ const updateMorseCode = () => {
     const morseCode = document.querySelector<HTMLTextAreaElement>('[data-element="morse-code"]');
     if (!morseCode) return;
 
-    const coordinates = '37.77638635179675, -122.42423022825709'
+    const coordinates = '37.776390764365374, -122.42423025899582'
     const message = "SOS. INVESTIGATION NEARLY COMPLETE. THEY'RE ON TO ME. NEED YOUR HELP ONE LAST TIME. " + coordinates;
     const encodedMessage = encodeMorse(message) || '';
 
