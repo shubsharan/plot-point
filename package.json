@@ -55,8 +55,5 @@
   "dependencies": {
     "@finsweet/ts-utils": "^0.40.0",
     "js-cookie": "^3.0.5"
-  },
-  "engines": {
-    "pnpm": ">=9"
   }
 }
