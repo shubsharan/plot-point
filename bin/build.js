@@ -14,6 +14,7 @@ const ENTRY_POINTS = [
   `src/profile.ts`,
   `src/stories.ts`,
   `src/story.ts`,
+  'src/chapters/one.ts'
 ];
 
 // Config dev serving

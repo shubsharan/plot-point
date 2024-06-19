@@ -39,3 +39,30 @@ export const checkForUser = async () => {
 
   return user;
 };
+
+export const toRadians = (degrees: number) => {
+  return degrees * Math.PI / 180;
+}
+
+export const toDegrees = (radians: number) => {
+  return radians * 180 / Math.PI;
+}
+
+export const calculateBearing = (startLat: number, startLng: number, destLat: number, destLng: number) => {
+  startLat = toRadians(startLat);
+  startLng = toRadians(startLng);
+  destLat = toRadians(destLat);
+  destLng = toRadians(destLng);
+
+  let y = Math.sin(destLng - startLng) * Math.cos(destLat);
+  let x = Math.cos(startLat) * Math.sin(destLat) -
+        Math.sin(startLat) * Math.cos(destLat) * Math.cos(destLng - startLng);
+  let brng = Math.atan2(y, x);
+  brng = toDegrees(brng);
+  return (brng + 360) % 360;
+}
+
+export const getCompassBearing = (alpha: number, beta: number, gamma: number) => {
+  let compass = -(alpha + beta * gamma / 90);
+  compass -= Math.floor(compass / 360) * 360;
+}
