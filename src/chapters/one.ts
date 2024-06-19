@@ -33,7 +33,7 @@ const handleOrientation = (event: DeviceOrientationEvent) => {
 
     if (!absolute || !alpha || !beta || !gamma) return;
 
-    console.log(getCompassBearing(alpha, beta, gamma));
+    alert(getCompassBearing(alpha, beta, gamma));
   
     // Do stuff with the new orientation data
   }
