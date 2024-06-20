@@ -14,7 +14,8 @@ const ENTRY_POINTS = [
   `src/profile.ts`,
   `src/stories.ts`,
   `src/story.ts`,
-  'src/puzzles/one.ts'
+  'src/puzzles/one.ts',
+  'src/puzzles/two.ts',
 ];
 
 // Config dev serving
