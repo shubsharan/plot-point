@@ -1,6 +1,7 @@
 // Initialize Webflow
 window.Webflow ||= [];
 window.Webflow.push(async () => {
+    handleSubmission();
 });
 
 const handleSubmission = () => {
